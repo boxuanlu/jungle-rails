@@ -4,6 +4,11 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if cart.count === 0%>
+  <h1> no items get some please!</h1>
+   <%= link_to "back to shopping", root_path, class: 'btn btn-lg btn-primary' %>
+   <%else%>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -49,5 +54,5 @@
       <% end %>
     </div>
   </div>
-
+<% end %>
 </section>
