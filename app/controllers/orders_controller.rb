@@ -4,6 +4,8 @@ before_filter :authorize
   def show
     @order = Order.find(params[:id])
     @order_items = LineItem.where(order_id: params[:id])
+    @current_user = User.find(session[:user_id])
+    UserMailer.order_confirm_email(@current_user, @order_items, @order).deliver_now
   end
 
   def create
