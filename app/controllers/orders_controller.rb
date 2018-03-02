@@ -1,7 +1,9 @@
 class OrdersController < ApplicationController
 
+before_filter :authorize
   def show
     @order = Order.find(params[:id])
+    @order_items = LineItem.where(order_id: params[:id])
   end
 
   def create
