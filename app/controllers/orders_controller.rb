@@ -34,7 +34,7 @@ before_filter :authorize
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "boxuanlu's Jungle Order",
       currency:    'cad'
     )
   end
