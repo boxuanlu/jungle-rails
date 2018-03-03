@@ -4,6 +4,7 @@ before_filter :authorize
   def show
     @order = Order.find(params[:id])
     @order_items = LineItem.where(order_id: params[:id])
+
   end
 
   def create
@@ -12,6 +13,7 @@ before_filter :authorize
 
     if order.valid?
       empty_cart!
+      OrderMailer.order_confirmation_email(order).deliver_now
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
@@ -32,7 +34,7 @@ before_filter :authorize
     Stripe::Charge.create(
       source:      params[:stripeToken],
       amount:      cart_total, # in cents
-      description: "Khurram Virani's Jungle Order",
+      description: "boxuanlu's Jungle Order",
       currency:    'cad'
     )
   end
