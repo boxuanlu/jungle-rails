@@ -4,8 +4,7 @@ before_filter :authorize
   def show
     @order = Order.find(params[:id])
     @order_items = LineItem.where(order_id: params[:id])
-    @current_user = User.find(session[:user_id])
-    UserMailer.order_confirm_email(@current_user, @order_items, @order).deliver_now
+
   end
 
   def create
@@ -14,6 +13,7 @@ before_filter :authorize
 
     if order.valid?
       empty_cart!
+      OrderMailer.order_confirmation_email(order).deliver_now
       redirect_to order, notice: 'Your Order has been placed.'
     else
       redirect_to cart_path, flash: { error: order.errors.full_messages.first }
