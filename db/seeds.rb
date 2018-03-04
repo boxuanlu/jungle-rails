@@ -176,7 +176,7 @@ Review.create!({
 })
 
 Review.create!({
-  description: 'hey not that bad'
+  description: 'hey not that bad',
   rating: 3,
   user: user3,
   product: red_mf_bookshelf
