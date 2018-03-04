@@ -3,6 +3,12 @@
 A mini e-commerce application built with Rails 4.2 for purposes of teaching Rails by example.
 
 ## Final Product
+!["Home Page with rating"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2023-45-10.png?raw=true)
+!["Product Page with Review"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2021-32-41.png?raw=true)
+!["Login Page"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2021-31-41.png?raw=true)
+!["Sign Up Page"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2021-31-45.png?raw=true)
+!["emailsend"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2021-31-28.png?raw=true)
+!["no item in chart"](https://github.com/boxuanlu/jungle-rails/blob/master/screenshort/Screenshot%20from%202018-03-03%2021-34-27.png?raw=true)
 
 ## Setup
 
