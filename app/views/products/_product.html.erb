@@ -4,6 +4,13 @@
       <%= image_tag product.image.thumb, alt: product.name %>
       <h4><%= product.name %></h4>
     <% end %>
+    <h5>Rating:
+      <% if product.overall_rating.nil? %>
+        0
+      <% else %>
+        <%= product.overall_rating %>
+      <% end %>
+    </h5>
   </header>
   <p class="description">
     <%= product.description %>

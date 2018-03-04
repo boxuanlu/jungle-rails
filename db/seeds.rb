@@ -131,7 +131,8 @@ red_mf_bookshelf = cat3.products.create!({
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
   quantity: 0,
-  price: 2_483.75
+  price: 2_483.75,
+  overall_rating: 2
 })
 
 ## USERS
@@ -141,21 +142,21 @@ user1 = User.create!({
   first_name: 'tom',
   last_name: 'bob',
   email: '123@qq.com',
-  password_digest: BCrypt::Password.create('www')
+  password: BCrypt::Password.create('www')
 })
 
 user2 = User.create!({
   first_name: 'dsad',
   last_name: 'sdsda',
   email: 'a2@21.com',
-  password_digest: BCrypt::Password.create('xxx')
+  password: BCrypt::Password.create('xxx')
 })
 
 user3 = User.create!({
   first_name: 'dsad',
   last_name: 'q23',
   email: 'q23@23q.com',
-  password_digest: BCrypt::Password.create('aaa')
+  password: BCrypt::Password.create('aaa')
 })
 ## REVIEWS
 
