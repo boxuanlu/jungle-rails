@@ -5,7 +5,9 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+puts "Trasing old data..."
 
+Review.destroy_all
 puts "Seeding Data ..."
 
 # Helper functions
@@ -124,7 +126,7 @@ cat3.products.create!({
   price: 987.65
 })
 
-cat3.products.create!({
+red_mf_bookshelf = cat3.products.create!({
   name:  'Red Bookshelf',
   description: Faker::Hipster.paragraph(4),
   image: open_asset('furniture3.jpg'),
@@ -132,5 +134,52 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## USERS
+## make some review in hard coing;
+
+user1 = User.create!({
+  first_name: 'tom',
+  last_name: 'bob',
+  email: '123@qq.com',
+  password_digest: BCrypt::Password.create('www')
+})
+
+user2 = User.create!({
+  first_name: 'dsad',
+  last_name: 'sdsda',
+  email: 'a2@21.com',
+  password_digest: BCrypt::Password.create('xxx')
+})
+
+user3 = User.create!({
+  first_name: 'dsad',
+  last_name: 'q23',
+  email: 'q23@23q.com',
+  password_digest: BCrypt::Password.create('aaa')
+})
+## REVIEWS
+
+
+
+Review.create!({
+  description: 'not good',
+  rating: 2,
+  user: user1,
+  product: red_mf_bookshelf
+})
+
+Review.create!({
+  description: 'dont like that',
+  rating: 1,
+  user: user2,
+  product: red_mf_bookshelf
+})
+
+Review.create!({
+  description: 'hey not that bad'
+  rating: 3,
+  user: user3,
+  product: red_mf_bookshelf
+})
 
 puts "DONE!"
