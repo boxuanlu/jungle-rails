@@ -36,6 +36,8 @@ gem 'rmagick'
 gem 'stripe'
 gem 'faker'
 
+gem 'pry-rails', group: [:development, :test]
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

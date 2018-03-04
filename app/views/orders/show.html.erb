@@ -5,15 +5,17 @@
   </header>
 
   <div class="order-summary jumbotron">
-    <h4>Thank you for your order! A confirmation will send to <%= current_user.email %></h4>
+    <h4>Thank you for your order <%= @order.email %>!</h4>
   </div>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
-     <thead>
+      <thead>
         <tr>
           <th colspan="2">Product</th>
-          <th>Quantity</th>
-          <th>Price</th>
+          <th>unit price</th>
+          <th>quantity</th>
+          <th>price</th>
         </tr>
       </thead>
       <tbody>
@@ -28,11 +30,12 @@
             TOTAL:
           </th>
           <th>
-            <%= @cart_total %>
+            <%= humanized_money_with_symbol @order.total %>
           </th>
         </tr>
       </tfoot>
     </table>
+  </div>
 
   <%= link_to "Continue Shopping", root_path, class: 'btn btn-lg btn-primary' %>
 
